@@ -1,18 +1,18 @@
 import '../../../entity/entity.dart';
 
-abstract class LoadListEvent {
+sealed class LoadListEvent {
   final Map<String, dynamic>? params;
 
   const LoadListEvent([this.params]);
 }
 
-class LoadListStarted extends LoadListEvent {
+final class LoadListStarted extends LoadListEvent {
   LoadListStarted({
     Map<String, dynamic>? params,
   }) : super(params);
 }
 
-class LoadListNextPageStarted<T extends BaseEntity> extends LoadListEvent {
+final class LoadListNextPageStarted<T extends BaseEntity> extends LoadListEvent {
   final List<T>? nextItems;
 
   const LoadListNextPageStarted({
@@ -21,13 +21,13 @@ class LoadListNextPageStarted<T extends BaseEntity> extends LoadListEvent {
   }) : super(params);
 }
 
-class LoadListRefreshed extends LoadListEvent {
+final class LoadListRefreshed extends LoadListEvent {
   LoadListRefreshed({
     Map<String, dynamic>? params,
   }) : super(params);
 }
 
-class LoadListItemRemoved<T extends Object> extends LoadListEvent {
+final class LoadListItemRemoved<T extends Object> extends LoadListEvent {
   final T removedItem;
 
   const LoadListItemRemoved(this.removedItem) : super();

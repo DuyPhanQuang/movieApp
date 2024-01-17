@@ -1,61 +1,61 @@
 import 'package:equatable/equatable.dart';
-
 import '../../../entity/entity.dart';
 
-abstract class LoadListState extends Equatable {
+sealed class LoadListState extends Equatable {
   @override
   List<Object> get props => [];
 }
 
-class LoadListInitial extends LoadListState {}
+final class LoadListInitial extends LoadListState {}
 
-class LoadListLoadInProgress extends LoadListState {
+final class LoadListLoadInProgress extends LoadListState {
   final bool isRefreshing;
   LoadListLoadInProgress({
     this.isRefreshing = false,
   });
 }
 
-class LoadListLoadNextPageInProgress<T extends BaseEntity>
+final class LoadListLoadNextPageInProgress<T extends BaseEntity>
     extends LoadListState {
   final List<T> items;
   final int nextPage;
   final bool isFinish;
 
   LoadListLoadNextPageInProgress(
-      this.items, {
-        required this.nextPage,
-        required this.isFinish,
-      });
+    this.items, {
+    required this.nextPage,
+    required this.isFinish,
+  });
 
   @override
   List<Object> get props => [
-    items,
-    nextPage,
-    isFinish,
-  ];
+        items,
+        nextPage,
+        isFinish,
+      ];
 }
 
-class LoadListLoadPageSuccess<T extends BaseEntity> extends LoadListState {
+final class LoadListLoadPageSuccess<T extends BaseEntity>
+    extends LoadListState {
   final List<T> items;
   final int nextPage;
   final bool isFinish;
 
   LoadListLoadPageSuccess(
-      this.items, {
-        this.nextPage = 0,
-        this.isFinish = false,
-      });
+    this.items, {
+    this.nextPage = 0,
+    this.isFinish = false,
+  });
 
   @override
   List<Object> get props => [
-    items,
-    nextPage,
-    isFinish,
-  ];
+        items,
+        nextPage,
+        isFinish,
+      ];
 }
 
-class LoadListLoadFailure extends LoadListState {
+final class LoadListLoadFailure extends LoadListState {
   final String errorMessage;
   final dynamic error;
 
@@ -65,7 +65,7 @@ class LoadListLoadFailure extends LoadListState {
   List<Object> get props => [errorMessage];
 }
 
-class LoadListRemoveItemSuccess<T extends Object> extends LoadListState {
+final class LoadListRemoveItemSuccess<T extends Object> extends LoadListState {
   final T removedItem;
 
   LoadListRemoveItemSuccess(this.removedItem);

@@ -7,6 +7,7 @@ class BlocConstants {
   static const Key forceToDispose = Key('force_to_dispose_bloc');
   static const Key launching = Key('launching_bloc');
   static const Key connectivity = Key('connectivity_bloc');
+  static const Key loader = Key('loader_bloc');
 
   static const Key dashboard = Key('dashboard_bloc');
 

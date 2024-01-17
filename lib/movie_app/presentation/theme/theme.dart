@@ -109,13 +109,18 @@ class MovieAppTheme {
 }
 
 extension MovieAppTextStyleExt on ThemeData {
+  TextStyle get appLoading => textTheme.titleMedium!.copyWith(
+        fontWeight: FontWeight.w700,
+        color: AppColor.blue,
+      );
+
   TextStyle get headerTitle => textTheme.labelLarge!.copyWith(
         fontWeight: FontWeight.w600,
         color: AppColor.black5,
       );
 
   TextStyle get buttonTitle => textTheme.labelLarge!.copyWith(
-    fontWeight: FontWeight.w500,
-    color: AppColor.black,
-  );
+        fontWeight: FontWeight.w500,
+        color: AppColor.black,
+      );
 }
