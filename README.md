@@ -9,13 +9,19 @@ This project is a coding test mobile app for apply MetaCrew
 Because I used window-PC to develop so please test on `ANDROID DEVICE` first.
 
 ## Pull refresh and Load more solution
-There are many approach implement load more feature. 
+There are many approach implement feature. 
 - Use pull_to_refresh packages (https://pub.dev/packages/pull_to_refresh) will help us save a lot time to build UI/animation for pull to refresh and load more behavior.
 - Use RefreshIndicator(https://api.flutter.dev/flutter/material/RefreshIndicator-class.html) perform user pull to refresh data. Also, use visibility_detector(https://pub.dev/packages/visibility_detector) for preload data when user scroll up vertical/horizontal list view.
 In this resource, i applied 2nd solution
 
 ## Responsive layout
 - Will apply responsive_framework packages to resize and scale UI for application(web/app)
+
+## Image caching
+There are many approach implement cache image.
+- Use network_to_file(https://pub.dev/packages/network_to_file_image) packages to store image in rom of device.
+- Use cache_network_image(https://pub.dev/packages/cached_network_image) packages to store image in memory of application.
+  In this resource, i used Image.memory from Flutter.
 
 ## Architecture
 
