@@ -23,9 +23,10 @@ class MovieInteractorImpl implements MovieInteractor {
     final List<Movie>? remoteData = fParams[remoteListMovieData];
 
     switch (action) {
-      case LoadListAction.loadMore:
-      case LoadListAction.refresh:
       case LoadListAction.start:
+      case LoadListAction.refresh:
+        return false;
+      case LoadListAction.loadMore:
       case null:
         if (currentAllItems != null && currentAllItems.isNotEmpty) {
           final temp = currentAllItems.firstWhereOrNull((e) {

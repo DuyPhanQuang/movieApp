@@ -12,8 +12,10 @@ class BlocConstants {
   static const Key dashboard = Key('dashboard_bloc');
 
   // list
-  static const Key videoList = Key('video_bloc');
+  static const Key trendingList = Key('trending_list_bloc');
+  static const Key topRateList = Key('top_rate_list_bloc');
 
   // item of list
-  static Key videoItemBloc(int id) => Key('video_item_bloc_$id');
+  static Key trendingItemBloc(int id) => Key('trending_item_bloc_$id');
+  static Key topRateItemBloc(int id) => Key('top_rate_item_bloc_$id');
 }

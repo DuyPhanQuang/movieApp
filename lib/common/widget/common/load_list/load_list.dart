@@ -201,7 +201,7 @@ class _LoadListState<T extends BaseEntity> extends State<LoadList<T>>
 
     final resetParams = {
       LoadListConstants.defaultPageKey: LoadListConstants.defaultPage,
-      LoadListConstants.defaultPageSizeKey: LoadListConstants.defaultPageSize,
+      LoadListConstants.action: LoadListAction.refresh,
     };
     BlocManager().event<LoadListBloc<T>>(
       widget.blocKey,

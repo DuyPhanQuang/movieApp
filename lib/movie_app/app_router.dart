@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../core/extension/extension.dart';
+import '../core/utils/utils.dart';
 import 'constants/constants.dart';
 import 'presentation/blocs/blocs.dart';
+import 'presentation/enums/section_type.dart';
 import 'presentation/journeys/dashboard/dashboard_screen.dart';
+import 'presentation/journeys/listing/listing_screen.dart';
 import 'presentation/journeys/splash/splash_screen.dart';
 
 class AppRouter {
@@ -27,6 +30,11 @@ class AppRouter {
           create: (_) => DashboardBloc.instance(),
           child: const DashboardScreen(),
         ).buildPage(settings: settings);
+      case RouteConstant.listing:
+        final args = settings.arguments as Map<String, dynamic>?;
+        final type =
+            args != null ? asT<SectionType>(args['type'])! : SectionType.movie;
+        return ListingScreen(type: type).buildPage(settings: settings);
     }
   }
 }

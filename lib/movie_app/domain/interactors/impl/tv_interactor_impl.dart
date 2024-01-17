@@ -18,14 +18,15 @@ class TVInteractorImpl implements TVInteractor {
   bool isDuplicateDataWhenLoadMore({Map<String, dynamic>? params}) {
     final fParams = asT<Map<String, dynamic>>(params)!;
     final LoadListAction? action = fParams[LoadListConstants.action];
-    final List<Movie>? currentAllItems =
+    final List<TV>? currentAllItems =
         fParams[LoadListConstants.currentAllItems];
-    final List<Movie>? remoteData = fParams[remoteListTVData];
+    final List<TV>? remoteData = fParams[remoteListTVData];
 
     switch (action) {
-      case LoadListAction.loadMore:
-      case LoadListAction.refresh:
       case LoadListAction.start:
+      case LoadListAction.refresh:
+        return false;
+      case LoadListAction.loadMore:
       case null:
         if (currentAllItems != null && currentAllItems.isNotEmpty) {
           final temp = currentAllItems.firstWhereOrNull((e) {

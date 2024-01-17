@@ -15,30 +15,30 @@ class LoadListBloc<T extends BaseEntity>
   late final LoadListInteractor<T> _loadListInteractor;
 
   LoadListBloc(
-      Key key, {
-        required LoadListInteractor<T> loadListInteractor,
-        Key? closeWithBlocKey,
-      })  : _loadListInteractor = loadListInteractor,
+    Key key, {
+    required LoadListInteractor<T> loadListInteractor,
+    Key? closeWithBlocKey,
+  })  : _loadListInteractor = loadListInteractor,
         super(
-        key,
-        closeWithBlocKey: closeWithBlocKey,
-        initialState: LoadListInitial(),
-      ) {
+          key,
+          closeWithBlocKey: closeWithBlocKey,
+          initialState: LoadListInitial(),
+        ) {
     on<LoadListItemRemoved>(_onLoadListRemovedItem);
     on<LoadListEvent>(_onLoadListLoaded);
   }
 
   Future<void> _onLoadListRemovedItem(
-      LoadListItemRemoved event,
-      Emitter<LoadListState> emit,
-      ) async {
+    LoadListItemRemoved event,
+    Emitter<LoadListState> emit,
+  ) async {
     emit(LoadListRemoveItemSuccess(event.removedItem));
   }
 
   Future<void> _onLoadListLoaded(
-      LoadListEvent event,
-      Emitter<LoadListState> emit,
-      ) async {
+    LoadListEvent event,
+    Emitter<LoadListState> emit,
+  ) async {
     if (event is LoadListItemRemoved) {
       return;
     }
@@ -66,10 +66,8 @@ class LoadListBloc<T extends BaseEntity>
     try {
       List<T>? allItems = <T>[];
       final params = event.params ?? <String, dynamic>{};
-      assert(
-      params.containsKey(LoadListConstants.defaultPageSizeKey) &&
-          params.containsKey(LoadListConstants.defaultPageKey),
-      'Param must contain pageSize & page parameters');
+      assert(params.containsKey(LoadListConstants.defaultPageKey),
+          'Param must contain page parameters');
       var nextPage = params[LoadListConstants.defaultPageKey];
       final previous = state;
       if (previous is LoadListLoadNextPageInProgress) {

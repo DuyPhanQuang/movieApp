@@ -36,7 +36,14 @@ class _DashboardScreenState extends State<DashboardScreen>
     );
   }
 
-  void _seeAllPressed(SectionType type) {}
+  void _seeAllPressed(SectionType type) {
+    Navigator.of(context).pushNamed(
+      RouteConstant.listing,
+      arguments: {
+        'type': type,
+      },
+    );
+  }
 
   void _dashboardBlocListener(BuildContext _, DashboardState state) {}
 
@@ -54,7 +61,7 @@ class _DashboardScreenState extends State<DashboardScreen>
               sliver: SliverAppBar(
                 backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 actions: const [
-                   SvgIcon(
+                  SvgIcon(
                     IconConstants.icSearch,
                   ),
                 ],
