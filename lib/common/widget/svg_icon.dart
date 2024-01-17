@@ -24,8 +24,8 @@ class SvgIcon extends StatelessWidget {
     return SvgPicture.asset(
       asset,
       fit: fit ?? BoxFit.cover,
-      width: width ?? Dimens.p_24,
-      height: height ?? Dimens.p_24,
+      width: width ?? Dimens.p_25,
+      height: height ?? Dimens.p_25,
       color: color,
       semanticsLabel: asset.toString(),
     );

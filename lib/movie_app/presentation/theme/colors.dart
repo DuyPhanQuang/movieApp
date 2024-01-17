@@ -36,8 +36,11 @@ class AppColor {
   static const Color black5 = Color(0xFF333333);
   static const Color black400 = Color(0xFF404040);
   static const Color black = Colors.black;
+  static const Color background2 = Color(0xFF0A0A0A);
   static const Color white = Colors.white;
-  static const Color blackBaseSkeletonColor = Color(0x1A000000);
+  static const Color blackBaseSkeletonColor = black;
   static const Color blackHighLightSkeletonColor = Color(0x0D000000);
   static const Color backgroundLight = Color(0xFFF5F6FD);
+  static const Color appBackground = Color(0xFFDEE4E7);
+  static const Color mainColor = Color(0xFF666666);
 }

@@ -9,13 +9,8 @@ import 'movie_app/injector/injection.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await runZonedGuarded<Future<void>>(() async {
-    Bloc.observer = AppBlocObserver();
+  Bloc.observer = AppBlocObserver();
 
-    await Injection().initialize();
-    runApp(const MovieApp());
-  }, (error, stack) {
-    debugPrint('error ---> $error');
-    debugPrint('stack ---> $stack');
-  });
+  await Injection().initialize();
+  runApp(const MovieApp());
 }

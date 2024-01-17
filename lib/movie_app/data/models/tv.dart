@@ -34,9 +34,9 @@ class TV extends BaseEntity {
 
   // ignore: prefer_constructors_over_static_methods
   static TV fromJson(Map<String, dynamic> json) {
-    final popularity = double.tryParse(json['popularity']);
-    final voteAverage = double.tryParse(json['vote_average']);
-    final voteCount = int.tryParse(json['vote_count']);
+    final popularity = double.tryParse('${json['popularity']}');
+    final voteAverage = double.tryParse('${json['vote_average']}');
+    final voteCount = int.tryParse('${json['vote_count']}');
 
     return TV(
       id: json['id'],

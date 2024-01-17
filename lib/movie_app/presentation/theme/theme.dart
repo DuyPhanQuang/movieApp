@@ -26,16 +26,17 @@ class MovieAppTheme {
       fontFamily: _kFontFamily,
     ),
     titleLarge: TextStyle(
-      fontSize: Fonts.s_15,
+      fontSize: Fonts.s_20,
       fontWeight: FontWeight.w500,
-      height: Dimens.p_16 / Dimens.p_12,
+      height: Dimens.p_30 / Dimens.p_20,
       color: AppColor.black5,
       fontFamily: _kFontFamily,
     ),
     labelLarge: TextStyle(
-      fontSize: Fonts.s_15,
-      fontWeight: FontWeight.w600,
-      color: AppColor.white,
+      fontSize: Fonts.s_12,
+      fontWeight: FontWeight.w500,
+      height: Dimens.p_18 / Dimens.p_12,
+      color: AppColor.black5,
       fontFamily: _kFontFamily,
     ),
   );
@@ -56,15 +57,16 @@ class MovieAppTheme {
       fontFamily: _kFontFamily,
     ),
     titleLarge: TextStyle(
-      fontSize: Fonts.s_15,
+      fontSize: Fonts.s_20,
       fontWeight: FontWeight.w500,
-      height: Dimens.p_16 / Dimens.p_12,
+      height: Dimens.p_30 / Dimens.p_20,
       color: AppColor.black5,
       fontFamily: _kFontFamily,
     ),
     labelLarge: TextStyle(
-      fontSize: Fonts.s_15,
-      fontWeight: FontWeight.w600,
+      fontSize: Fonts.s_12,
+      fontWeight: FontWeight.w500,
+      height: Dimens.p_18 / Dimens.p_12,
       color: AppColor.white,
       fontFamily: _kFontFamily,
     ),
@@ -88,7 +90,7 @@ class MovieAppTheme {
           statusBarBrightness: Brightness.light, // For iOS (dark icons)
         ),
       ),
-      scaffoldBackgroundColor: AppColor.white,
+      scaffoldBackgroundColor: AppColor.appBackground,
       textTheme: lightTextTheme,
       primaryColor: AppColor.blue,
     );
@@ -114,13 +116,12 @@ extension MovieAppTextStyleExt on ThemeData {
         color: AppColor.blue,
       );
 
-  TextStyle get headerTitle => textTheme.labelLarge!.copyWith(
-        fontWeight: FontWeight.w600,
-        color: AppColor.black5,
+  TextStyle get headerTitle => textTheme.titleLarge!.copyWith(
+        color: AppColor.background2.withAlpha(70),
       );
 
   TextStyle get buttonTitle => textTheme.labelLarge!.copyWith(
-        fontWeight: FontWeight.w500,
-        color: AppColor.black,
+        fontWeight: FontWeight.w400,
+        color: AppColor.mainColor,
       );
 }

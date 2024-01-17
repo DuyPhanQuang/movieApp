@@ -31,11 +31,6 @@ class _MovieAppState extends State<MovieApp> {
         initialRoute: RouteConstant.splash,
         navigatorKey: AppRouter.shared.navigatorKey,
         onGenerateRoute: AppRouter.shared.generateRoute,
-        locale: const Locale('vi'),
-        supportedLocales: const [
-          Locale('vi'),
-          Locale('en'),
-        ],
         builder: (context, widget) {
           return BlocBuilder<LoaderBloc, LoaderState>(
             builder: (context, state) {
