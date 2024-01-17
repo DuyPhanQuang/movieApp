@@ -2,10 +2,8 @@
 This project is a coding test mobile app for apply MetaCrew
 
 ## Flutter version
-Flutter 3.16.7 • channel stable
-Framework • revision ef1af02aea (6 days ago) • 2024-01-11 15:19:26 -0600
-Engine • revision 4a585b7929
-Tools • Dart 3.2.4 • DevTools 2.28.5
+- Flutter 3.16.7 • channel stable
+- Dart 3.2.4 • DevTools 2.28.5
 
 ## How to run app
 Because I used window-PC to develop so please test on `ANDROID DEVICE` first.
@@ -15,6 +13,9 @@ There are many approach implement load more feature.
 - Use pull_to_refresh packages (https://pub.dev/packages/pull_to_refresh) will help us save a lot time to build UI/animation for pull to refresh and load more behavior.
 - Use RefreshIndicator(https://api.flutter.dev/flutter/material/RefreshIndicator-class.html) perform user pull to refresh data. Also, use visibility_detector(https://pub.dev/packages/visibility_detector) for preload data when user scroll up vertical/horizontal list view.
 In this resource, i applied 2nd solution
+
+## Responsive layout
+- Will apply responsive_framework packages to resize and scale UI for application(web/app)
 
 ## Architecture
 
